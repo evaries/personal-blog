@@ -88,13 +88,18 @@ export const pageQuery = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
+      htmlAst
       html
+      excerpt(pruneLength: 100)
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
+        date(formatString: "MMMM Do, YYYY")
+      }
+      fields {
+        slug
+        readingTime {
+          text
+        }
       }
     }
   }

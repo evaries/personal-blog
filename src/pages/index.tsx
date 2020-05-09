@@ -24,6 +24,9 @@ type Data = {
         }
         fields: {
           slug: string
+          readingTime: {
+            text: string
+          }
         }
       }
     }[]
@@ -53,6 +56,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              <small><strong>{` --> `}{node.fields.readingTime.text}</strong></small>
             </header>
             <section>
               <p
@@ -82,6 +86,9 @@ export const pageQuery = graphql`
         node {
           excerpt
           fields {
+            readingTime {
+              text
+            }
             slug
           }
           frontmatter {
