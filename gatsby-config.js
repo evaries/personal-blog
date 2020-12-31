@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `What do you think about?`,
+    title: `Move more, worry less`,
     author: {
       name: `Yevhenii Nadtochii`,
       summary: `.`,
@@ -31,7 +31,6 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          
           {
             resolve: `gatsby-remark-images`,
             options: {
